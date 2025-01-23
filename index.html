@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>宣传官网</title>
+    <style>
+        /* 全局样式 */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 导航栏样式 */
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            float: left;
+        }
+
+        nav ul li a {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            background-color: #555;
+        }
+
+        /* 轮播图样式 */
+     .carousel {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+        }
+
+     .carousel-slides {
+            display: flex;
+            width: 300%;
+            height: 100%;
+            transition: transform 0.5s ease-in-out;
+        }
+
+     .carousel-slides img {
+            width: 33.33%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+     .carousel-control {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 30px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px 15px;
+            cursor: pointer;
+        }
+
+     .prev {
+            left: 10px;
+        }
+
+     .next {
+            right: 10px;
+        }
+
+     .carousel-dots {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+     .dot {
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            cursor: pointer;
+            transition: background-color 0.6s ease;
+        }
+
+     .dot.active {
+            background-color: #717171;
+        }
+
+        /* 新闻样式 */
+     .news {
+            padding: 20px;
+        }
+
+     .news-item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+        }
+
+     .news-item h3 {
+            margin-top: 0;
+        }
+
+     .news-content {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+        }
+
+     .more-content {
+            display: none;
+        }
+
+        /* 城市介绍样式 */
+     .city-introduction {
+            padding: 20px;
+            border-top: 1px solid #ccc;
+        }
+
+        /* 版权信息样式 */
+     .copyright {
+            padding: 10px;
+            text-align: center;
+            background-color: #f4f4f4;
+            color: #666;
+        }
+
+        /* 一键入群按钮样式 */
+     .join-group-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+     .join-group-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 导航栏 -->
+    <nav>
+        <ul>
+            <li><a href="#">首页</a></li>
+            <li><a href="#">关于我们</a></li>
+            <li><a href="#city-introduction">城市介绍</a></li>
+            <li><a href="#">联系我们</a></li>
+        </ul>
+    </nav>
+    <!-- 新的轮播图 -->
+    <div class="carousel">
+        <div class="carousel-slides">
+            <img src="1.png" alt="轮播图1">
+            <img src="2.png" alt="轮播图2">
+            <img src="3.png" alt="轮播图3">
+        </div>
+        <div class="carousel-dots">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+        <a class="carousel-control prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="carousel-control next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <!-- 新闻区域 -->
+    <div class="news">
+        <h2>最新新闻</h2>
+        <div class="news-item">
+            <h3>公交车变飞机？</h3>
+            <div class="news-content">
+                近日，暮云市发生了一件令人瞠目结舌的奇事，一辆公交车竟然在众目睽睽之下 “变身” 成了飞机，这一不可思议的场景让当地居民和过往行人都大为震惊。市民李先生激动地说：“我当时就在路边等车，亲眼看到这辆公交车一点点变成了飞机，简直不敢相信自己的眼睛。我还以为是在拍电影或者做梦呢！” 另一位目击者张女士也表示：“太神奇了，从来没见过这样的事情，感觉就像科幻电影里的情节搬到了现实中。
+            </div>
+            <div class="more-content">
+                经了解，这是由一家高科技公司主导的创新实验，旨在探索解决城市交通拥堵的新方案。该公交车采用了先进的混合动力技术，能在地面和空中两种模式切换。未来，这种新型交通工具或许会改变我们的出行方式。
+            </div>
+            <button onclick="toggleContent(this)">显示更多</button>
+        </div>
+        <div class="news-item">
+            <h3>新闻标题2</h3>
+            <div class="news-content">
+                近日，发生了一起令人瞩目的事件，该市市长被曝带头违规驾驶，这一行为引发了社会各界的广泛关注和强烈反响。
+                据多位现场目击者称，在某路段，市长驾驶着一辆公务车，在禁止超车的路段强行超车，且未按照规定使用转向灯，随后又在限速40公里/小时的区域内车速超过了60公里/小时。这一系列违规驾驶行为被路过的市民用手机记录了下来，并迅速在网络上传播开来。
+            </div>
+            <div class="more-content">
+                市民张先生表示很震惊，作为领导不应带头违反交通规则。事件曝光后，网友们纷纷质疑，这严重损害政府形象。交通管理部门已介入调查，市政府也发布声明将严肃处理，绝不姑息。此次事件让公众对政府官员行为规范产生新思考，后续情况本报将持续关注。
+            </div>
+            <button onclick="toggleContent(this)">显示更多</button>
+        </div>
+        <div class="news-item">
+            <h3>新闻标题3</h3>
+            <div class="news-content">
+                这里是新闻内容3的开头部分，简要介绍一下新闻的主要背景和初步情况。
+            </div>
+            <div class="more-content">
+                接着是新闻内容3的详细部分，包含更多具体细节、相关人物的观点以及事件可能产生的后续影响等。
+            </div>
+            <button onclick="toggleContent(this)">显示更多</button>
+        </div>
+    </div>
+    <!-- 城市介绍区域 -->
+    <div class="city-introduction" id="city-introduction">
+        <h2>城市介绍</h2>
+        <p>暮云市是一座充满活力与魅力的城市，拥有丰富的历史文化遗产和现代化的城市设施。这里自然风光秀丽，四季分明，为居民和游客提供了宜人的生活和旅游环境。</p>
+        <p>在经济方面，暮云市以高新技术产业、制造业和服务业为主导，不断推动产业升级和创新发展，吸引了众多企业和人才的入驻。</p>
+        <p>同时，暮云市还注重城市建设和公共服务，拥有完善的交通网络、优质的教育资源和先进的医疗设施，致力于为市民创造高品质的生活。</p>
+    </div>
+    <!-- 版权信息区域 -->
+    <div class="copyright">
+        &copy; 2025 暮云市宣传官网版权所有
+    </div>
+    <!-- 一键入群按钮 -->
+    <button class="join-group-button" onclick="joinGroup()">一键入群</button>
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.querySelectorAll(".carousel-slides img");
+            let dots = document.querySelectorAll(".dot");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].classList.remove("active");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].classList.add("active");
+        }
+
+        function joinGroup() {
+            // 跳转到QQ群链接
+            window.location.href = "http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=71XSrUqoYRdw6iqliQGU57Cv69nMmcow&authKey=okhwErsEzwHZtIPvsVQHr1h9EuEEvcNELpfMbsoBj7vPtyPqcy%2BFK4XR%2FaQjIhPH&noverify=0&group_code=1028340373";
+        }
+
+        function toggleContent(btn) {
+            let newsContent = btn.previousElementSibling;
+            let moreContent = newsContent.nextElementSibling;
+            if (moreContent.style.display === "none") {
+                newsContent.style.display = "none";
+                moreContent.style.display = "block";
+                btn.textContent = "收起";
+            } else {
+                newsContent.style.display = "block";
+                moreContent.style.display = "none";
+                btn.textContent = "显示更多";
+            }
+        }
+    </script>
+</body>
+
+</html>
